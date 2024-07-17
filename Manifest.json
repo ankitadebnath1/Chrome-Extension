@@ -1,0 +1,23 @@
+{
+    "manifest_version": 3,
+    "name": "Grammar Checker",
+    "version": "1.0",
+    "description": "Rectifies grammar errors using OpenAI API",
+    "permissions": ["activeTab", "scripting", "storage"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "48": "grammar-48.png"
+      }
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  
